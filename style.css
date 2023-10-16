@@ -1,0 +1,112 @@
+@font-face {
+    font-family: "Montserrat";
+    src: url("fonts/Montserrat-Regular.ttf");
+}
+
+.header {
+    margin: 0;
+    height: 89px;
+    width: 100%;
+    background-color: #000;
+}
+
+body {
+    margin: 0 auto;
+    font-family: "Montserrat";
+    background-color: #0B0B0B;
+}
+
+.header__box1 {
+    margin: 0 auto;
+    width: 1121px;
+    height: 74px;
+    display: flex;
+    align-self: center;
+    flex-direction: row;
+    gap: 24px;
+    padding-top: 7px;
+}
+
+.header__box2 {
+    width: 905px;
+    height: 33px;
+    margin-top: 28px;
+    display: flex;
+    gap: 24px;
+}
+
+.header__a-active {
+    color: #FFF;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration-line: none;
+}
+
+.header__a-passive {
+    color: rgba(255, 255, 255, 0.80);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration-line: none;
+}
+
+.header__a-box-active {
+    display: flex;
+    flex-direction: column;
+}
+
+.header__a-line {
+    width: 101px;
+    height: 3px;
+    background-color: #D868FF;
+}
+
+.main {
+    margin: 0 auto;
+    width: 906px;
+    background-color: #181818;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.main__gameplay {
+    width: 906px;
+    height: 510px;
+    background-color: black;
+}
+
+.main__shadow {
+    width: 906px;
+    height: 510px;
+    opacity: 0.38;
+}
+
+.main__text-block h1 {
+    margin: 0;
+    color: #D868FF;
+    font-size: 36px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.main__text-block p {
+    margin: 0;
+    color: #FFF;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.main__text-block {
+    width: 673px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+}
