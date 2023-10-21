@@ -3,6 +3,16 @@
     src: url("fonts/Montserrat-Regular.ttf");
 }
 
+@keyframes move-it {
+    0% {
+        background-position: initial;
+    }
+
+    100% {
+        background-position: 100px 0px;
+    }
+}
+
 .header {
     margin: 0;
     height: 89px;
@@ -13,7 +23,13 @@
 body {
     margin: 0 auto;
     font-family: "Montserrat";
-    background-color: #0B0B0B;
+    background: repeating-linear-gradient(45deg,
+            #000,
+            #000 5%,
+            #0B0B0B 5%,
+            #0B0B0B 10%);
+    background-size: 100px 100px;
+    animation: move-it 2s linear infinite;
 }
 
 .header__box1 {
