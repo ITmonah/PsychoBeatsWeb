@@ -24,8 +24,8 @@ body {
     margin: 0 auto;
     font-family: "Montserrat";
     background: repeating-linear-gradient(45deg,
-            #000,
-            #000 5%,
+            #080808,
+            #080808 5%,
             #0B0B0B 5%,
             #0B0B0B 10%);
     background-size: 100px 100px;
@@ -112,6 +112,12 @@ body {
     background-color: #D868FF;
 }
 
+.main__logo-box2 {
+    width: 669px;
+    height: 8px;
+    background-color: #D868FF;
+}
+
 .main__text-block h1 {
     margin: 0;
     color: #D868FF;
@@ -121,7 +127,9 @@ body {
     line-height: normal;
 }
 
-.main__text-block p {
+.main__text-block p,
+ul,
+ol {
     margin: 0;
     color: #FFF;
     font-size: 24px;
@@ -129,6 +137,7 @@ body {
     font-weight: 500;
     line-height: normal;
 }
+
 
 .main__text-block {
     width: 673px;
@@ -138,7 +147,21 @@ body {
     gap: 23px;
 }
 
+.main__text-block ol {
+    list-style-position: inside;
+    padding: 0;
+}
+
 .main__text-block p span {
+    margin: 0;
+    color: #FFF;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.main__text-block li span {
     margin: 0;
     color: #FFF;
     font-size: 24px;
@@ -172,6 +195,58 @@ body {
     margin-bottom: 52px;
 }
 
+.main__download {
+    width: 669px;
+    height: 357px;
+    background-color: rgba(0, 0, 0, 0.44);
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+    align-items: center;
+    justify-content: end;
+}
+
+.main__download p {
+    color: #FFF;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.main__download img {
+    width: 325px;
+    height: 59px;
+}
+
+.main__btn-box {
+    width: 428px;
+    height: 15px;
+    background-color: #BD00FF;
+}
+
+.main__download-btn {
+    width: 428px;
+    height: 124px;
+    background-color: #D868FF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main__download-btn p {
+    margin: 0;
+    margin-top: 43px;
+    color: #FFF;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
 .footer {
     width: 100%;
     height: 184px;
@@ -181,6 +256,10 @@ body {
     flex-direction: row;
     justify-content: center;
     gap: 105px;
+}
+
+.main__botter {
+    margin-bottom: 28px;
 }
 
 .footer__box h1 {
