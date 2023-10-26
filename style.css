@@ -293,6 +293,7 @@ ol {
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    text-decoration-line: none;
 }
 
 .footer__phone a {
