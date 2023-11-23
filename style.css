@@ -75,7 +75,7 @@ body {
 }
 
 .header__a-line {
-    width: 101px;
+    width: 100%;
     height: 3px;
     background-color: #D868FF;
 }
@@ -414,4 +414,63 @@ ol {
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+}
+
+/*Библиотека*/
+.main__search {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.main__input input {
+    width: 238px;
+    height: 35px;
+    background: #4E4E4E;
+    font-size: 24px;
+    color: #FFF;
+}
+
+.main__complexity {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    max-width: 483px;
+}
+
+.main__complexity-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 145px;
+    height: 35px;
+}
+
+.main__complexity-item p {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+#green {
+    background: rgba(114, 255, 91, 0.60);
+}
+
+#yellow {
+    background: #FFDB5B;
+}
+
+#red {
+    background: rgba(255, 91, 91, 0.60);
+}
+
+.main__complexity-line {
+    width: 3px;
+    height: 35px;
+    background: #FFF;
 }
