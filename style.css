@@ -379,7 +379,7 @@ ol {
 .main__review-text {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     width: 395px;
     height: 204px;
 }
@@ -391,6 +391,29 @@ ol {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+
+}
+
+.main__review-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 129px;
+}
+
+.main__review-stars {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    height: 48px;
+}
+
+#stars_left {
+    justify-content: end;
+}
+
+#stars_right {
+    justify-content: start;
 }
 
 #h1 {
@@ -417,8 +440,7 @@ ol {
 }
 
 .main__we-img {
-    width: 673px;
-    height: 500px;
+    max-width: 673px;
     margin-top: 20px;
     margin-bottom: 40px;
 }
@@ -458,6 +480,7 @@ ol {
 
 .form-control {
     background: #4E4E4E;
+    color: #fff;
     border: 0px;
     height: 35px;
 }
