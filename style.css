@@ -20,6 +20,10 @@
     background-color: #000;
 }
 
+.navbar {
+    display: none;
+}
+
 body {
     margin: 0 auto;
     font-family: "Montserrat";
@@ -34,7 +38,7 @@ body {
 
 .header__box1 {
     margin: 0 auto;
-    width: 1121px;
+    max-width: 1121px;
     height: 74px;
     display: flex;
     align-self: center;
@@ -44,7 +48,7 @@ body {
 }
 
 .header__box2 {
-    width: 905px;
+    max-width: 905px;
     height: 33px;
     margin-top: 28px;
     display: flex;
@@ -82,7 +86,7 @@ body {
 
 .main {
     margin: 0 auto;
-    width: 906px;
+    max-width: 906px;
     background-color: #181818;
     display: flex;
     flex-direction: column;
@@ -91,7 +95,7 @@ body {
 }
 
 .main__gameplay {
-    width: 906px;
+    width: 100%;
     height: 510px;
     background-color: black;
     background-image: linear-gradient(rgba(0, 0, 0, 0.62),
@@ -100,21 +104,35 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    /*background-size: contain;*/
+
 }
 
-.main__gameplay img {
-    padding-top: 197px;
+.main__img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.main__img img {
+    width: 70%;
 }
 
 .main__logo-box {
-    width: 906px;
+    width: 100%;
     height: 11px;
     background-color: #D868FF;
 }
 
 .main__logo-box2 {
-    width: 669px;
-    height: 8px;
+    max-width: 669px;
+    min-height: 8px;
     background-color: #D868FF;
 }
 
@@ -140,7 +158,7 @@ ol {
 
 
 .main__text-block {
-    width: 673px;
+    max-width: 673px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -180,19 +198,19 @@ ol {
 }
 
 .main__spacer {
-    width: 736px;
+    width: 80%;
     height: 3px;
     background-color: #777;
 }
 
 .main__bubble-boxes {
     margin: 0 auto;
-    width: 736px;
-    height: 221px;
+    max-width: 736px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     margin-bottom: 52px;
+    gap: 37px;
+    flex-wrap: wrap;
 }
 
 .main__download {
@@ -249,7 +267,7 @@ ol {
 
 .footer {
     width: 100%;
-    height: 184px;
+    min-height: 184px;
     background-color: #050505;
     margin: 0 auto;
     display: flex;
