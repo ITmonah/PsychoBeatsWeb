@@ -415,11 +415,17 @@ ol {
     margin: 0;
 }
 
-.main__we img {
+.main__we-img {
     width: 673px;
     height: 500px;
     margin-top: 20px;
     margin-bottom: 40px;
+}
+
+.main__we-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .main__we-text {
@@ -439,14 +445,25 @@ ol {
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 15px;
 }
 
-.main__input input {
+.mb-3 {
+    margin-bottom: 0px !important;
+    background: #4E4E4E;
     width: 238px;
     height: 35px;
+}
+
+.form-control {
     background: #4E4E4E;
-    font-size: 24px;
-    color: #FFF;
+    border: 0px;
+    height: 35px;
+}
+
+#button-addon2 {
+    border: 0px;
+    height: 35px;
 }
 
 .main__complexity {
@@ -462,8 +479,9 @@ ol {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 145px;
+    width: 125px;
     height: 35px;
+    border: 0px;
 }
 
 .main__complexity-item p {
@@ -477,18 +495,71 @@ ol {
 
 #green {
     background: rgba(114, 255, 91, 0.60);
+
+}
+
+#green:hover {
+    color: var(--bs-btn-hover-color);
+    background-color: rgba(171, 251, 159, 0.6);
+    border-color: var(--bs-btn-hover-border-color);
 }
 
 #yellow {
     background: #FFDB5B;
 }
 
+#yellow:hover {
+    color: var(--bs-btn-hover-color);
+    background-color: #f4e2a0;
+    border-color: var(--bs-btn-hover-border-color);
+}
+
 #red {
     background: rgba(255, 91, 91, 0.60);
+}
+
+#red:hover {
+    color: var(--bs-btn-hover-color);
+    background-color: rgba(255, 130, 130, 0.6);
+    border-color: var(--bs-btn-hover-border-color);
 }
 
 .main__complexity-line {
     width: 3px;
     height: 35px;
     background: #FFF;
+}
+
+.main__songs {
+    width: 100%;
+    margin-top: 31px;
+    gap: 45px;
+}
+
+.main__songs-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+    width: 100%;
+}
+
+.main__songs-item li span {
+    font-weight: 700;
+}
+
+.main__songs-list {
+    margin: 0;
+}
+
+.main__songs-img {
+    width: 277px;
+    height: 249px;
+    flex-shrink: 0;
+}
+
+.main__songs-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

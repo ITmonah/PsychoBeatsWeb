@@ -50,54 +50,98 @@
                 <img src="img/logo.png">
             </div>
             <div class="header__box2">
-                <a href="#" class="header__a-active">Главная</a>
-                <a href="#" class="header__a-passive">Скачать игру</a>
+                <a href="/" class="header__a-passive">Главная</a>
+                <a href="index_download.html" class="header__a-passive">Скачать игру</a>
                 <div class="header__a-box-active">
-                    <a href="/" class="header__a-active">Главная</a>
+                    <a href="/" class="header__a-active">Библиотека</a>
                     <div class="header__a-line"></div>
                 </div>
-                <a href="index_download.html" class="header__a-passive">Скачать игру</a>
-                <a href="index_library.html" class="header__a-passive">Библиотека</a>
                 <a href="index_review.html" class="header__a-passive">Отзывы</a>
                 <a href="index_we.html" class="header__a-passive">О нас</a>
             </div>
 
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
     <div class="main">
+
         <div class="main__text-block">
-            <h1 id="h1">Библиотека песен</h1>
+            <h1 id="h1">Библиотека</h1>
+            <div class="main__search">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="  " aria-label="Название песни"
+                        aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.5 19C15.1944 19 19 15.1944 19 10.5C19 5.8056 15.1944 2 10.5 2C5.8056 2 2 5.8056 2 10.5C2 15.1944 5.8056 19 10.5 19Z"
+                                stroke="black" stroke-width="2" stroke-linejoin="round" />
+                            <path
+                                d="M13.3285 7.17155C12.6046 6.4477 11.6046 6 10.5 6C9.3955 6 8.3955 6.4477 7.67165 7.17155"
+                                stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M16.6108 16.6108L20.8535 20.8535" stroke="black" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="main__complexity">
+                    <button id="green" class="main__complexity-item">
+                        <p>easy</p>
+                    </button>
+                    <div class="main__complexity-line">
+                    </div>
+                    <button id="yellow" class="main__complexity-item">
+                        <p>mid</p>
+                    </button>
+                    <div class="main__complexity-line">
+                    </div>
+                    <button id="red" class="main__complexity-item">
+                        <p>hard</p>
+                    </button>
+                </div>
+            </div>
 
         </div>
-        <div class="main__search">
-            <div class="main__input">
-                <input type="text">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M10.5 19C15.1944 19 19 15.1944 19 10.5C19 5.8056 15.1944 2 10.5 2C5.8056 2 2 5.8056 2 10.5C2 15.1944 5.8056 19 10.5 19Z"
-                        stroke="black" stroke-width="2" stroke-linejoin="round" />
-                    <path d="M13.3285 7.17155C12.6046 6.4477 11.6046 6 10.5 6C9.3955 6 8.3955 6.4477 7.67165 7.17155"
-                        stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M16.6108 16.6108L20.8535 20.8535" stroke="black" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
+        <div class="main__text-block main__songs">
+            <div class="main__text-block main__songs-item">
+                <div class="main__songs-img">
+                    <img src="img/Magic_Battle.png" alt="Магическая битва">
+                </div>
+                <div class="main__text-block main__songs-list">
+                    <ul>
+                        <li><span>Название</span></li>
+                        <li><span>Из какого аниме</span></li>
+                        <li><span>Сложность</span></li>
+                        <li><span>Количество тактов</span></li>
+                        <li><span>Количетсво нот</span></li>
+                    </ul>
+                </div>
             </div>
-            <div class="main__complexity">
-                <div id="green" class="main__complexity-item">
-                    <p>easy</p>
+            <div class="main__text-block main__songs-item">
+                <div class="main__songs-img">
+                    <img src="img/Fullmetal_Alchemist.png" alt="Стальной алхимик">
                 </div>
-                <div class="main__complexity-line">
+                <div class="main__text-block main__songs-list">
+                    <ul>
+                        <li><span>Название</span></li>
+                        <li><span>Из какого аниме</span></li>
+                        <li><span>Сложность</span></li>
+                        <li><span>Количество тактов</span></li>
+                        <li><span>Количетсво нот</span></li>
+                    </ul>
                 </div>
-                <div id="yellow" class="main__complexity-item">
-                    <p>mid</p>
+            </div>
+            <div class="main__text-block main__songs-item">
+                <div class="main__songs-img">
+                    <img src="img/Fate.png" alt="Фэйт">
                 </div>
-                <div class="main__complexity-line">
-                </div>
-                <div id="red" class="main__complexity-item">
-                    <p>hard</p>
+                <div class="main__text-block main__songs-list">
+                    <ul>
+                        <li><span>Название</span></li>
+                        <li><span>Из какого аниме</span></li>
+                        <li><span>Сложность</span></li>
+                        <li><span>Количество тактов</span></li>
+                        <li><span>Количетсво нот</span></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -123,6 +167,9 @@
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
