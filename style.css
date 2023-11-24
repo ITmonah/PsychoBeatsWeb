@@ -209,8 +209,9 @@ ol {
     display: flex;
     flex-direction: row;
     margin-bottom: 52px;
-    gap: 37px;
+    gap: 35px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .main__download {
