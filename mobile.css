@@ -16,6 +16,7 @@
     .main__text-block {
         margin-left: 5%;
         margin-right: 5%;
+        gap: 12px;
     }
 
     .main__text-block h1 {
@@ -33,6 +34,20 @@
     .main__text-block p span1 {
         font-size: 22px;
     }
+
+    .main__text-block ul li {
+        font-size: 22px;
+    }
+
+    .main__text-block ul li span {
+        font-size: 22px;
+    }
+
+    .main {
+        gap: 12px;
+        margin-top: 24px;
+    }
+
 }
 
 @media screen and (max-width:616px) {
@@ -59,6 +74,14 @@
     }
 
     .main__text-block p span1 {
+        font-size: 18px;
+    }
+
+    .main__text-block ul li {
+        font-size: 18px;
+    }
+
+    .main__text-block ul li span {
         font-size: 18px;
     }
 }
