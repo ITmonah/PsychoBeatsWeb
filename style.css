@@ -338,8 +338,8 @@ ol {
 /*Стили для отзывов*/
 .main__review {
     margin: 0;
-    width: 666px;
-    height: 258px;
+    max-width: 666px;
+    min-height: 258px;
     background: rgba(0, 0, 0, 0.50);
 }
 
@@ -351,6 +351,7 @@ ol {
     margin-top: 27px;
     margin-right: 47px;
     margin-bottom: 35px;
+    gap: 40px;
 }
 
 .main__review-foto {
@@ -380,8 +381,8 @@ ol {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 395px;
-    height: 204px;
+    max-width: 395px;
+    min-height: 204px;
 }
 
 .main__review-text p {
@@ -398,7 +399,7 @@ ol {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 129px;
+    min-height: 129px;
 }
 
 .main__review-stars {
