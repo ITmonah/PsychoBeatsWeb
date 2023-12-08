@@ -1,0 +1,36 @@
+{
+    "songs": [
+        {
+            "img": "img/Magic_Battle.png",
+            "name": "Vivid Vice",
+            "anime": "Магическая битва",
+            "diff": "hard",
+            "takts": 100,
+            "notes": 1234
+        },
+        {
+            "img": "img/Fullmetal_Alchemist.png",
+            "name": "Магическая битва",
+            "anime": "Магическая битва",
+            "diff": "mid",
+            "takts": 100,
+            "notes": 1234
+        },
+        {
+            "img": "img/Fate.png",
+            "name": "Магическая битва",
+            "anime": "Магическая битва",
+            "diff": "easy",
+            "takts": 100,
+            "notes": 1234
+        },
+        {
+            "img": "img/Magic_Battle.png",
+            "name": "Магическая битва",
+            "anime": "Магическая битва",
+            "diff": "hard",
+            "takts": 100,
+            "notes": 1234
+        }
+    ]
+}

@@ -416,7 +416,7 @@ ol {
     justify-content: start;
 }
 
-#h1 {
+.h1 {
     margin-top: 42px;
 }
 
@@ -518,34 +518,45 @@ ol {
     line-height: normal;
 }
 
+#all {
+    background: rgba(216, 104, 255, 0.50);
+
+}
+
+#all:hover {
+    color: var(--bs-btn-hover-color);
+    background-color: rgba(216, 104, 255, 1);
+    border-color: var(--bs-btn-hover-border-color);
+}
+
 #green {
-    background: rgba(114, 255, 91, 0.60);
+    background: rgba(114, 255, 91, 0.50);
 
 }
 
 #green:hover {
     color: var(--bs-btn-hover-color);
-    background-color: rgba(171, 251, 159, 0.6);
+    background-color: rgba(114, 255, 91, 1);
     border-color: var(--bs-btn-hover-border-color);
 }
 
 #yellow {
-    background: #FFDB5B;
+    background: rgba(255, 219, 91, 0.5);
 }
 
 #yellow:hover {
     color: var(--bs-btn-hover-color);
-    background-color: #f4e2a0;
+    background-color: rgba(255, 219, 91, 1);
     border-color: var(--bs-btn-hover-border-color);
 }
 
 #red {
-    background: rgba(255, 91, 91, 0.60);
+    background: rgba(255, 91, 91, 0.50);
 }
 
 #red:hover {
     color: var(--bs-btn-hover-color);
-    background-color: rgba(255, 130, 130, 0.6);
+    background-color: rgba(255, 130, 130, 1);
     border-color: var(--bs-btn-hover-border-color);
 }
 
