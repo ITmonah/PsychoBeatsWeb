@@ -589,6 +589,7 @@ ol {
     justify-content: center;
     max-width: 100%;
     margin-top: 20px;
+    padding-left: 116px;
     gap: 18px;
 }
 
@@ -608,7 +609,7 @@ ol {
     display: flex;
     flex-direction: row;
     gap: 23px;
-    width: 100%;
+    width: 790px;
 }
 
 .main__songs-list {
@@ -661,4 +662,29 @@ ol {
     align-items: center;
     gap: 6px;
     margin: 0;
+}
+
+/*страницы*/
+.main__pages {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 132px;
+}
+
+.main__pages a {
+    color: rgba(255, 255, 255, 0.50);
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-decoration-line: none;
+    margin: 0;
+}
+
+#main__pages-active {
+    color: rgba(255, 255, 255, 1);
 }
