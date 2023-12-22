@@ -3,15 +3,15 @@
         {
             "img": "img/Magic_Battle.png",
             "name": "Vivid Vice",
-            "anime": "Магическая битва",
-            "diff": "hard",
+            "anime": "Bakemonogatari",
+            "diff": "easy",
             "takts": 100,
             "notes": 1234
         },
         {
             "img": "img/Fullmetal_Alchemist.png",
             "name": "Магическая битва",
-            "anime": "Магическая битва",
+            "anime": "Fate Stay Night",
             "diff": "mid",
             "takts": 100,
             "notes": 1234
@@ -20,7 +20,7 @@
             "img": "img/Fate.png",
             "name": "Магическая битва",
             "anime": "Магическая битва",
-            "diff": "easy",
+            "diff": "mid",
             "takts": 100,
             "notes": 1234
         },
