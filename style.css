@@ -417,7 +417,15 @@ ol {
     justify-content: start;
 }
 
-.h1 {
+#hah_w {
+    margin-top: 42px;
+}
+
+#hah_l {
+    margin-top: 42px;
+}
+
+#hah_r {
     margin-top: 42px;
 }
 
@@ -567,10 +575,21 @@ ol {
     background: #FFF;
 }
 
+.Songs__spacer {
+    width: 528px;
+    height: 1px;
+    margin-left: 262px;
+    background: #3D3D3D;
+}
+
 .main__songs {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
     margin-top: 20px;
-    gap: 38px;
+    gap: 18px;
 }
 
 .main__songs-img {
@@ -588,7 +607,6 @@ ol {
 .main__songs-item {
     display: flex;
     flex-direction: row;
-    align-items: center;
     gap: 23px;
     width: 100%;
 }
@@ -602,7 +620,7 @@ ol {
 }
 
 .main__songs-list h1 {
-    color: #FFDB5B;
+    /*color: rgba(255, 219, 91, 1);*/
     font-family: Montserrat;
     font-size: 32px;
     font-style: normal;
