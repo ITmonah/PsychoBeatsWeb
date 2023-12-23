@@ -528,13 +528,12 @@ ol {
 }
 
 #all {
-    background: rgba(216, 104, 255, 0.50);
-
+    background: rgba(216, 104, 255, 1);
 }
 
 #all:hover {
     color: var(--bs-btn-hover-color);
-    background-color: rgba(216, 104, 255, 1);
+    background-color: rgba(216, 104, 255, 1) !important;
     border-color: var(--bs-btn-hover-border-color);
 }
 
@@ -545,7 +544,7 @@ ol {
 
 #green:hover {
     color: var(--bs-btn-hover-color);
-    background-color: rgba(114, 255, 91, 1);
+    background-color: rgba(114, 255, 91, 1) !important;
     border-color: var(--bs-btn-hover-border-color);
 }
 
@@ -555,9 +554,10 @@ ol {
 
 #yellow:hover {
     color: var(--bs-btn-hover-color);
-    background-color: rgba(255, 219, 91, 1);
+    background-color: rgba(255, 219, 91, 1) !important;
     border-color: var(--bs-btn-hover-border-color);
 }
+
 
 #red {
     background: rgba(255, 91, 91, 0.50);
@@ -565,7 +565,7 @@ ol {
 
 #red:hover {
     color: var(--bs-btn-hover-color);
-    background-color: rgba(255, 130, 130, 1);
+    background-color: rgba(255, 130, 130, 1) !important;
     border-color: var(--bs-btn-hover-border-color);
 }
 

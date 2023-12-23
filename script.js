@@ -6,6 +6,9 @@ const Easy = document.getElementById("green");
 const Mid = document.getElementById("yellow");
 const Hard = document.getElementById("red");
 
+const Search = document.getElementById("search");
+const Search_button = document.getElementById("button-addon2");
+
 All.addEventListener("click", () => {
     activeSongs = songs;
     fillSongs(songs);
@@ -13,6 +16,38 @@ All.addEventListener("click", () => {
 Easy.addEventListener("click", songFilter("Easy", Easy));
 Mid.addEventListener("click", songFilter("Mid", Mid));
 Hard.addEventListener("click", songFilter("Hard", Hard));
+
+/*Смена цветов кнопок*/
+All.onclick = function () {
+    this.style.backgroundColor = "rgba(216, 104, 255, 1)";
+    Easy.style.backgroundColor = "rgba(114, 255, 91, 0.5)";
+    Mid.style.backgroundColor = "rgba(255, 219, 91, 0.5)";
+    Hard.style.backgroundColor = "rgba(255, 130, 130, 0.5)";
+    Search.value = "";
+}
+Easy.onclick = function () {
+    this.style.backgroundColor = "rgba(114, 255, 91, 1)";
+    All.style.backgroundColor = "rgba(216, 104, 255, 0.5)";
+    Mid.style.backgroundColor = "rgba(255, 219, 91, 0.5)";
+    Hard.style.backgroundColor = "rgba(255, 130, 130, 0.5)";
+    Search.value = "";
+}
+Mid.onclick = function () {
+    this.style.backgroundColor = "rgba(255, 219, 91, 1)";
+    Easy.style.backgroundColor = "rgba(114, 255, 91, 0.5)";
+    All.style.backgroundColor = "rgba(216, 104, 255, 0.5)";
+    Hard.style.backgroundColor = "rgba(255, 130, 130, 0.5)";
+    Search.value = "";
+}
+Hard.onclick = function () {
+    this.style.backgroundColor = "rgba(255, 130, 130, 1)";
+    Easy.style.backgroundColor = "rgba(114, 255, 91, 0.5)";
+    Mid.style.backgroundColor = "rgba(255, 219, 91, 0.5)";
+    All.style.backgroundColor = "rgba(216, 104, 255, 0.5)";
+    Search.value = "";
+}
+
+Search_button.addEventListener("click", songSearch(Search.value, Search_button));
 
 fetch("songs.json")
     .then(response => response.json())
@@ -147,3 +182,31 @@ function songFilter(difficult) {
         fillSongs(activeSongs);
     }
 }
+function songSearch(search_text) {
+    search_text = Search.value
+
+    All.style.backgroundColor = "rgba(216, 104, 255, 1)";
+    Easy.style.backgroundColor = "rgba(114, 255, 91, 0.5)";
+    Mid.style.backgroundColor = "rgba(255, 219, 91, 0.5)";
+    Hard.style.backgroundColor = "rgba(255, 130, 130, 0.5)";
+
+    return function () {
+        search_text = Search.value
+        if (!search_text) {
+            fillSongs(songs)
+        }
+        activeSongs = songs;
+        fillSongs(songs);
+        activeSongs = songs.filter(j => j.name.toLowerCase().includes(search_text.toLowerCase()) || j.anime.toLowerCase().includes(search_text.toLowerCase()));
+        fillSongs(activeSongs)
+    }
+}
+Search.addEventListener('keydown', function (event) {
+    if (event.code == 'Enter') {
+        Search_button.click();
+        All.style.backgroundColor = "rgba(216, 104, 255, 1)";
+        Easy.style.backgroundColor = "rgba(114, 255, 91, 0.5)";
+        Mid.style.backgroundColor = "rgba(255, 219, 91, 0.5)";
+        Hard.style.backgroundColor = "rgba(255, 130, 130, 0.5)";
+    }
+})
