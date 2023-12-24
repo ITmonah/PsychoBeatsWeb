@@ -9,6 +9,8 @@ const Hard = document.getElementById("red");
 const Search = document.getElementById("search");
 const Search_button = document.getElementById("button-addon2");
 
+const Hide = document.getElementById("hide");
+
 All.addEventListener("click", () => {
     activeSongs = songs;
     fillSongs(songs);
@@ -24,6 +26,7 @@ All.onclick = function () {
     Mid.style.backgroundColor = "rgba(255, 219, 91, 0.5)";
     Hard.style.backgroundColor = "rgba(255, 130, 130, 0.5)";
     Search.value = "";
+    removeElements()
 }
 Easy.onclick = function () {
     this.style.backgroundColor = "rgba(114, 255, 91, 1)";
@@ -31,6 +34,7 @@ Easy.onclick = function () {
     Mid.style.backgroundColor = "rgba(255, 219, 91, 0.5)";
     Hard.style.backgroundColor = "rgba(255, 130, 130, 0.5)";
     Search.value = "";
+    removeElements()
 }
 Mid.onclick = function () {
     this.style.backgroundColor = "rgba(255, 219, 91, 1)";
@@ -38,6 +42,7 @@ Mid.onclick = function () {
     All.style.backgroundColor = "rgba(216, 104, 255, 0.5)";
     Hard.style.backgroundColor = "rgba(255, 130, 130, 0.5)";
     Search.value = "";
+    removeElements()
 }
 Hard.onclick = function () {
     this.style.backgroundColor = "rgba(255, 130, 130, 1)";
@@ -45,6 +50,7 @@ Hard.onclick = function () {
     Mid.style.backgroundColor = "rgba(255, 219, 91, 0.5)";
     All.style.backgroundColor = "rgba(216, 104, 255, 0.5)";
     Search.value = "";
+    removeElements()
 }
 
 Search_button.addEventListener("click", songSearch(Search.value, Search_button));
@@ -82,7 +88,7 @@ function fillSongs(arr) {
         results.classList.add("main__songs-item");
         results.innerHTML =
             `<div class="main__songs-img">
-                <img src=${element.img} alt="Магическая битва">
+                <img src=${element.img} alt="Картинка песни">
             </div>
             <div class="main__text-block main__songs-list">
                 <h1 style="color:${color}">${element.name}</h1>
@@ -195,13 +201,74 @@ function songSearch(search_text) {
         if (!search_text) {
             fillSongs(songs)
         }
-        activeSongs = songs;
-        fillSongs(songs);
         activeSongs = songs.filter(j => j.name.toLowerCase().includes(search_text.toLowerCase()) || j.anime.toLowerCase().includes(search_text.toLowerCase()));
         fillSongs(activeSongs)
+        removeElements()
+    }
+
+}
+function songList(search_text) {
+    search_text = Search.value
+    return function () {
+        search_text = Search.value
+        if (!search_text) {
+            fillSongs(songs)
+            removeElements();
+        }
+        removeElements();
+        activeSongs = songs.filter(j => j.name.toLowerCase().includes(search_text.toLowerCase()) || j.anime.toLowerCase().includes(search_text.toLowerCase()));
+        /*Создание листа*/
+        for (let i of activeSongs) {
+            const lastEl = activeSongs.length - 1;
+            let h;
+            let songName;
+            let songAnime;
+            if (i == activeSongs[lastEl]) {
+                h = "none"
+            }
+            let listSpaser = document.createElement("div");
+            listSpaser.classList.add("list__spasers");
+            let listItem = document.createElement("li");
+            listItem.classList.add("list-items");
+            listItem.style.cursor = "pointer";
+            listItem.setAttribute("onclick", "displaySongs('" + i.name + "', '" + i.anime + "')");
+            /*Показ списка*/
+            songName = i.name.toString().substr(search_text);
+            songAnime = i.anime.toString().substr(search_text);
+
+            const stringName = songName.toUpperCase().indexOf(search_text.toUpperCase());
+            const stringAnime = songAnime.toUpperCase().indexOf(search_text.toUpperCase());
+            const length = search_text.toUpperCase().length;
+
+            if (!search_text.toUpperCase() || stringName === -1) {
+                songName = i.name.toString().substr(search_text);
+            }
+            else {
+                songName = i.name.toString().substr(0, stringName) + '<b>' + i.name.substr(stringName, length) + '</b>' + i.name.substr(stringName + length);
+            }
+            if (!search_text.toUpperCase() || stringAnime === -1) {
+                songAnime = "<i>" + i.anime.toString().substr(search_text);
+            }
+            else {
+                songAnime = i.anime.toString().substr(0, stringAnime) + '<b>' + i.anime.substr(stringAnime, length) + '</b>' + i.anime.substr(stringAnime + length);
+            }
+
+            listItem.innerHTML = songName + "<br>" + "<i>" + songAnime + "</i>";
+            listSpaser.innerHTML =
+                `<div style="display:${h}" class="list__spaser">
+            </div>`
+            document.querySelector(".list").appendChild(listItem)
+            document.querySelector(".list").appendChild(listSpaser)
+        }
+        if (!search_text) {
+            removeElements();
+        }
     }
 }
+Search.oninput = songList(Search.value)
+
 Search.addEventListener('keydown', function (event) {
+    songSearch(Search.value)
     if (event.code == 'Enter') {
         Search_button.click();
         All.style.backgroundColor = "rgba(216, 104, 255, 1)";
@@ -209,4 +276,39 @@ Search.addEventListener('keydown', function (event) {
         Mid.style.backgroundColor = "rgba(255, 219, 91, 0.5)";
         Hard.style.backgroundColor = "rgba(255, 130, 130, 0.5)";
     }
+    removeElements()
 })
+function removeElements() {
+    /*Очистить все элементы*/
+    let items = document.querySelectorAll(".list-items");
+    let spacers = document.querySelectorAll(".list__spasers");
+    items.forEach((item) => {
+        item.remove();
+    });
+    spacers.forEach((spacer) => {
+        spacer.remove();
+    });
+}
+function displaySongs(name_song, anime_song) {
+    /*Показать выбранную песню*/
+    search_text = Search.value
+    if (name_song.toLowerCase().includes(search_text.toLowerCase())) {
+        Search.value = name_song
+    }
+    else {
+        Search.value = anime_song
+    }
+    removeElements()
+    Search_button.click()
+}
+
+document.addEventListener('click', (e) => {
+    /*const withinBoundaries = e.composedPath().includes(Search);*/
+    if (!Search.value) {
+        Hide.style.display = "none"
+    }
+    else {
+        Hide.style.display = "block"
+    }
+})
+

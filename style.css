@@ -493,6 +493,7 @@ ol {
     border-radius: 0px;
     border: 0px;
     height: 35px;
+
 }
 
 #button-addon2 {
@@ -664,7 +665,7 @@ ol {
     margin: 0;
 }
 
-/*страницы*/
+/*Страницы*/
 .main__pages {
     display: flex;
     flex-direction: row;
@@ -687,4 +688,33 @@ ol {
 
 #main__pages-active {
     color: rgba(255, 255, 255, 1);
+}
+
+/*Стиль для листа поиска*/
+ul {
+    list-style: none;
+}
+
+.list {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 0px;
+    margin: 0px !important;
+}
+
+.list-items {
+    padding: 10px 5px;
+    font-size: 1rem;
+    font-family: Montserrat;
+    color: #000;
+}
+
+.list-items:hover {
+    background-color: #D9D9D9;
+}
+
+.list__spaser {
+    width: 100%;
+    background-color: #0B0B0B;
+    height: 0.5px;
 }
