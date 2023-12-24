@@ -1,36 +1,124 @@
 {
     "songs": [
         {
-            "img": "img/Magic_Battle.png",
-            "name": "Vivid Vice",
+            "img": "img/Bakemonogatari.png",
+            "name": "Re`nai Circulation",
             "anime": "Bakemonogatari",
-            "diff": "easy",
+            "diff": "Easy",
+            "takts": 120,
+            "notes": 590
+        },
+        {
+            "img": "img/Berserk.png",
+            "name": "Sacrifice",
+            "anime": "Berserk",
+            "diff": "Mid",
             "takts": 100,
             "notes": 1234
         },
         {
-            "img": "img/Fullmetal_Alchemist.png",
-            "name": "Магическая битва",
-            "anime": "Fate Stay Night",
-            "diff": "mid",
+            "img": "img/Bleach.png",
+            "name": "Melody of the Wild Dance",
+            "anime": "Bleach",
+            "diff": "Mid",
             "takts": 100,
             "notes": 1234
         },
         {
-            "img": "img/Fate.png",
-            "name": "Магическая битва",
-            "anime": "Магическая битва",
-            "diff": "mid",
-            "takts": 100,
-            "notes": 1234
+            "img": "img/DeathNote.png",
+            "name": "What's up, people!",
+            "anime": "Death Note",
+            "diff": "Hard",
+            "takts": 120,
+            "notes": 590
         },
         {
-            "img": "img/Magic_Battle.png",
-            "name": "Магическая битва",
-            "anime": "Магическая битва",
-            "diff": "hard",
-            "takts": 100,
-            "notes": 1234
+            "img": "img/FateRect.png",
+            "name": "Brave Shine",
+            "anime": "Fate",
+            "diff": "Mid",
+            "takts": 120,
+            "notes": 590
+        },
+        {
+            "img": "img/FullMetalAlchemist.png",
+            "name": "Period · CHEMISTRY",
+            "anime": "Full Metal Alchemist Brotherhood",
+            "diff": "Hard",
+            "takts": 120,
+            "notes": 590
+        },
+        {
+            "img": "img/GurrenLagann.png",
+            "name": "Sorairo Days",
+            "anime": "Gurren Lagann",
+            "diff": "Hard",
+            "takts": 120,
+            "notes": 590
+        },
+        {
+            "img": "img/HxH.png",
+            "name": "Just Awake",
+            "anime": "Hunter x Hunter",
+            "diff": "Mid",
+            "takts": 120,
+            "notes": 590
+        },
+        {
+            "img": "img/Jojo.png",
+            "name": "BLOODY STREAM",
+            "anime": "JoJo's Bizarre Adventure",
+            "diff": "Mid",
+            "takts": 120,
+            "notes": 590
+        },
+        {
+            "img": "img/JujuRect.png",
+            "name": "Vivid Vice",
+            "anime": "Jujutsu No Kaisen",
+            "diff": "Mid",
+            "takts": 120,
+            "notes": 590
+        },
+        {
+            "img": "img/Naruto.png",
+            "name": "Sign",
+            "anime": "Naruto Shippuden",
+            "diff": "Mid",
+            "takts": 120,
+            "notes": 590
+        },
+        {
+            "img": "img/Neverland.png",
+            "name": "Touch Off",
+            "anime": "Yakusoku no Neverland",
+            "diff": "Hard",
+            "takts": 120,
+            "notes": 590
+        },
+        {
+            "img": "img/Parasyte.png",
+            "name": "Let Me Hear",
+            "anime": "Parasyte",
+            "diff": "Hard",
+            "takts": 120,
+            "notes": 590
+        },
+        {
+            "img": "img/Sengen.png",
+            "name": "Goodbye Sengen",
+            "anime": "Chinozo",
+            "diff": "Hard",
+            "takts": 120,
+            "notes": 590
+        },
+        {
+            "img": "img/TokyoGhoul.png",
+            "name": "Unravel",
+            "anime": "Tokyo Ghoul",
+            "diff": "Hard",
+            "takts": 120,
+            "notes": 590
         }
     ]
 }

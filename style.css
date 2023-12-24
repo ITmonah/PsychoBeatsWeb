@@ -435,7 +435,15 @@ ol {
     justify-content: start;
 }
 
-.h1 {
+#hah_w {
+    margin-top: 42px;
+}
+
+#hah_l {
+    margin-top: 42px;
+}
+
+#hah_r {
     margin-top: 42px;
 }
 
@@ -503,6 +511,7 @@ ol {
     border-radius: 0px;
     border: 0px;
     height: 35px;
+
 }
 
 #button-addon2 {
@@ -538,13 +547,12 @@ ol {
 }
 
 #all {
-    background: rgba(216, 104, 255, 0.50);
-
+    background: rgba(216, 104, 255, 1);
 }
 
 #all:hover {
     color: var(--bs-btn-hover-color);
-    background-color: rgba(216, 104, 255, 1);
+    background-color: rgba(216, 104, 255, 1) !important;
     border-color: var(--bs-btn-hover-border-color);
 }
 
@@ -555,7 +563,7 @@ ol {
 
 #green:hover {
     color: var(--bs-btn-hover-color);
-    background-color: rgba(114, 255, 91, 1);
+    background-color: rgba(114, 255, 91, 1) !important;
     border-color: var(--bs-btn-hover-border-color);
 }
 
@@ -565,9 +573,10 @@ ol {
 
 #yellow:hover {
     color: var(--bs-btn-hover-color);
-    background-color: rgba(255, 219, 91, 1);
+    background-color: rgba(255, 219, 91, 1) !important;
     border-color: var(--bs-btn-hover-border-color);
 }
+
 
 #red {
     background: rgba(255, 91, 91, 0.50);
@@ -575,41 +584,37 @@ ol {
 
 #red:hover {
     color: var(--bs-btn-hover-color);
-    background-color: rgba(255, 130, 130, 1);
+    background-color: rgba(255, 130, 130, 1) !important;
     border-color: var(--bs-btn-hover-border-color);
 }
 
 .main__complexity-line {
-    width: 3px;
+    width: 1px;
     height: 35px;
     background: #FFF;
 }
 
+.Songs__spacer {
+    width: 528px;
+    height: 1px;
+    margin-left: 262px;
+    background: #3D3D3D;
+}
+
 .main__songs {
-    width: 100%;
-    margin-top: 31px;
-    gap: 45px;
-}
-
-.main__songs-item {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    gap: 32px;
-    width: 100%;
-}
-
-.main__songs-item li span {
-    font-weight: 700;
-}
-
-.main__songs-list {
-    margin: 0;
+    justify-content: center;
+    max-width: 100%;
+    margin-top: 20px;
+    padding-left: 116px;
+    gap: 18px;
 }
 
 .main__songs-img {
-    width: 277px;
-    height: 249px;
+    width: 239.177px;
+    height: 215px;
     flex-shrink: 0;
 }
 
@@ -617,4 +622,117 @@ ol {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.main__songs-item {
+    display: flex;
+    flex-direction: row;
+    gap: 23px;
+    width: 790px;
+}
+
+.main__songs-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0px;
+    margin: 0;
+}
+
+.main__songs-list h1 {
+    /*color: rgba(255, 219, 91, 1);*/
+    font-family: Montserrat;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 10px;
+}
+
+.main__songs-list p {
+    font-size: 20px;
+}
+
+.main__songs-list-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 0;
+}
+
+.main__songs-spacer {
+    width: 100%;
+    height: 1px;
+    flex-shrink: 0;
+    background: #D9D9D9;
+    margin-bottom: 13px;
+}
+
+.main__songs-info {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin: 0;
+}
+
+.main__songs-info-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+}
+
+/*Страницы*/
+.main__pages {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 132px;
+}
+
+.main__pages a {
+    color: rgba(255, 255, 255, 0.50);
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-decoration-line: none;
+    margin: 0;
+}
+
+#main__pages-active {
+    color: rgba(255, 255, 255, 1);
+}
+
+/*Стиль для листа поиска*/
+ul {
+    list-style: none;
+}
+
+.list {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 0px;
+    margin: 0px !important;
+}
+
+.list-items {
+    padding: 10px 5px;
+    font-size: 1rem;
+    font-family: Montserrat;
+    color: #000;
+}
+
+.list-items:hover {
+    background-color: #D9D9D9;
+}
+
+.list__spaser {
+    width: 100%;
+    background-color: #0B0B0B;
+    height: 0.5px;
 }
