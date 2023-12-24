@@ -240,30 +240,48 @@ ol {
     height: 59px;
 }
 
-.main__btn-box {
-    width: 428px;
-    height: 15px;
-    background-color: #BD00FF;
-}
-
 .main__download-btn {
     width: 428px;
     height: 124px;
-    background-color: #D868FF;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    color: #FFF;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    font-family: "Montserrat";
+    background-image: url(img/dwnl-btn.svg);
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    outline: none;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
 }
 
-.main__download-btn p {
-    margin: 0;
-    margin-top: 43px;
-    color: #FFF;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
+.main__download-btn:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.btn-1 {
+    background-image: url(img/dwnl-btn.svg);
+    color: #fff;
+}
+
+.btn-1:hover {
+    background-image: url(img/Group\ 6.svg);
+    font-size: 36px;
+}
+
+.btn-1:active {
+    background-image: url(img/Group\ 6.svg);
+    top: 3px;
 }
 
 .footer {
