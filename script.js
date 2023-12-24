@@ -301,13 +301,17 @@ function displaySongs(name_song, anime_song) {
     removeElements()
     Search_button.click()
 }
-
 document.addEventListener('click', (e) => {
-    /*const withinBoundaries = e.composedPath().includes(Search);*/
-    if (!Search.value) {
+    const withinBoundaries = e.composedPath().includes(Search);
+    if (!withinBoundaries) {
         Hide.style.display = "none"
     }
     else {
+        Hide.style.display = "block"
+    }
+})
+document.addEventListener('keydown', function (event) {
+    if (event.code) {
         Hide.style.display = "block"
     }
 })
