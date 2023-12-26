@@ -1,5 +1,11 @@
 let songs;
 let activeSongs;
+const itemsPerPage = 5;
+let currentPage = 0;
+let content;
+let items
+
+const Main = document.getElementById("main");
 const songsMassive = document.getElementById("Songs");
 const All = document.getElementById("all");
 const Easy = document.getElementById("green");
@@ -7,7 +13,8 @@ const Mid = document.getElementById("yellow");
 const Hard = document.getElementById("red");
 
 const Search = document.getElementById("search");
-const Search_button = document.getElementById("button-addon2");
+const Search_button = document.getElementById("button-addon2_2");
+const Remove_button = document.getElementById("button-addon2");
 
 const Hide = document.getElementById("hide");
 
@@ -52,7 +59,11 @@ Hard.onclick = function () {
     Search.value = "";
     removeElements()
 }
-
+Remove_button.onclick = function () {
+    Search.value = "";
+    removeElements()
+    Search_button.click()
+}
 Search_button.addEventListener("click", songSearch(Search.value, Search_button));
 
 fetch("songs.json")
@@ -86,6 +97,7 @@ function fillSongs(arr) {
         const results = document.createElement("div");
         const spacer = document.createElement("div");
         results.classList.add("main__songs-item");
+        spacer.classList.add("main__songs-spacers");
         results.innerHTML =
             `<div class="main__songs-img">
                 <img src=${element.img} alt="Картинка песни">
@@ -180,6 +192,32 @@ function fillSongs(arr) {
         songsMassive.appendChild(results);
         songsMassive.appendChild(spacer);
     })
+    content = document.querySelector('.main');
+    items = Array.from(content.getElementsByClassName('main__songs-item'));
+    poloski = Array.from(content.getElementsByClassName('main__songs-spacers'));
+    il = items.length
+    a = document.querySelector('.main__pages');
+    /*написать условие, что если есть кнопки, то удалить их */
+    if (!a) {
+        console.log(items)
+        createPageButtons(il, items);
+        showPage(0, items, poloski)
+
+        const End = document.createElement("div");
+        End.classList.add("main__botter");
+        Main.appendChild(End);
+    }
+    else {
+        a.remove()
+        console.log(items)
+        createPageButtons(il, items);
+        showPage(0, items, poloski)
+
+        const End = document.createElement("div");
+        End.classList.add("main__botter");
+        Main.appendChild(End);
+    }
+
 }
 function songFilter(difficult) {
     let diff = difficult;
@@ -315,4 +353,53 @@ document.addEventListener('keydown', function (event) {
         Hide.style.display = "block"
     }
 })
+
+function showPage(page, items, poloski) {
+    const startIndex = page * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    items.forEach((item, index) => {
+        item.classList.toggle('hidden', index < startIndex || index >= endIndex);
+    });
+    poloski.forEach((item, index) => {
+        if (index + 1 === endIndex) {
+
+            console.log(item, index + 1, endIndex)
+            item.classList.add('hidden');
+        }
+        item.classList.toggle('hidden', index < startIndex || index >= endIndex);
+    });
+    updateActiveButtonStates();
+}
+
+function createPageButtons(il, items) {
+    const totalPages = Math.ceil(il / itemsPerPage);
+    const paginationContainer = document.createElement('div');
+    const paginationDiv = document.body.appendChild(paginationContainer);
+    paginationContainer.classList.add('main__pages');
+    /*Добавление кнопок пагинации*/
+    for (let i = 0; i < totalPages; i++) {
+        const pageButton = document.createElement('a');
+        pageButton.textContent = i + 1;
+        pageButton.innerHTML = i + 1;
+        pageButton.addEventListener('click', () => {
+            currentPage = i;
+            showPage(currentPage, items, poloski);
+            updateActiveButtonStates();
+        });
+        content.appendChild(paginationContainer);
+        paginationDiv.appendChild(pageButton);
+    }
+}
+
+function updateActiveButtonStates() {
+    /*Добавление класса для активной страницы*/
+    const pageButtons = document.querySelectorAll('.main__pages a');
+    pageButtons.forEach((button, index) => {
+        if (index === currentPage) {
+            button.classList.add('main__pages-active');
+        } else {
+            button.classList.remove('main__pages-active');
+        }
+    });
+}
 

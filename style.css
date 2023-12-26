@@ -497,6 +497,18 @@ ol {
 }
 
 #button-addon2 {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    border: 0px;
+    height: 35px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#button-addon2_2 {
+    display: flex;
+    justify-content: center;
     border: 0px;
     height: 35px;
 }
@@ -514,7 +526,7 @@ ol {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 125px;
+    width: 85px;
     height: 35px;
     border: 0px;
 }
@@ -577,9 +589,9 @@ ol {
 }
 
 .Songs__spacer {
-    width: 528px;
+    width: 524px;
     height: 1px;
-    margin-left: 262px;
+    margin-left: 259px;
     background: #3D3D3D;
 }
 
@@ -589,9 +601,9 @@ ol {
     align-items: center;
     max-width: 100%;
     margin-top: 20px;
-    padding-left: 116px;
+    padding-left: 122px;
     gap: 18px;
-    min-height: 240px;
+    min-height: 100%;
 }
 
 .main__songs-img {
@@ -684,6 +696,7 @@ ol {
     line-height: normal;
     text-decoration-line: none;
     margin: 0;
+    cursor: pointer;
 }
 
 #main__pages-active {
@@ -717,4 +730,8 @@ ol {
     width: 100%;
     background-color: #0B0B0B;
     height: 0.5px;
+}
+
+.hidden {
+    display: none;
 }
