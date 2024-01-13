@@ -18,6 +18,9 @@ const Remove_button = document.getElementById("button-addon2");
 
 const Hide = document.getElementById("hide");
 
+const ClassA = document.getElementsByClassName("main__pages-active");
+const ClassP = document.getElementsByClassName("main__pages-passive");
+
 All.addEventListener("click", () => {
     activeSongs = songs;
     fillSongs(songs);
@@ -33,7 +36,8 @@ All.onclick = function () {
     Mid.style.backgroundColor = "rgba(255, 219, 91, 0.5)";
     Hard.style.backgroundColor = "rgba(255, 130, 130, 0.5)";
     Search.value = "";
-    removeElements()
+    removeElements();
+    showPage(0, items, poloski);
 }
 Easy.onclick = function () {
     this.style.backgroundColor = "rgba(114, 255, 91, 1)";
@@ -41,7 +45,8 @@ Easy.onclick = function () {
     Mid.style.backgroundColor = "rgba(255, 219, 91, 0.5)";
     Hard.style.backgroundColor = "rgba(255, 130, 130, 0.5)";
     Search.value = "";
-    removeElements()
+    removeElements();
+    showPage(0, items, poloski);
 }
 Mid.onclick = function () {
     this.style.backgroundColor = "rgba(255, 219, 91, 1)";
@@ -49,7 +54,8 @@ Mid.onclick = function () {
     All.style.backgroundColor = "rgba(216, 104, 255, 0.5)";
     Hard.style.backgroundColor = "rgba(255, 130, 130, 0.5)";
     Search.value = "";
-    removeElements()
+    removeElements();
+    showPage(0, items, poloski);
 }
 Hard.onclick = function () {
     this.style.backgroundColor = "rgba(255, 130, 130, 1)";
@@ -57,12 +63,13 @@ Hard.onclick = function () {
     Mid.style.backgroundColor = "rgba(255, 219, 91, 0.5)";
     All.style.backgroundColor = "rgba(216, 104, 255, 0.5)";
     Search.value = "";
-    removeElements()
+    removeElements();
+    showPage(0, items, poloski);
 }
 Remove_button.onclick = function () {
     Search.value = "";
-    removeElements()
-    Search_button.click()
+    removeElements();
+    Search_button.click();
 }
 Search_button.addEventListener("click", songSearch(Search.value, Search_button));
 
@@ -79,10 +86,11 @@ fetch("songs.json")
 function fillSongs(arr) {
     songsMassive.innerHTML = "";
     const lastEl = arr.length - 1;
+    const fiveEl = arr.length;
     arr.forEach((element) => {
         let color;
         let h;
-        if (element == arr[lastEl]) {
+        if (element == arr[lastEl] || element == arr[4] || element == arr[9] || element == arr[14]) {
             h = "none"
         }
         if (element.diff == "Easy") {
@@ -197,9 +205,9 @@ function fillSongs(arr) {
     poloski = Array.from(content.getElementsByClassName('main__songs-spacers'));
     il = items.length
     a = document.querySelector('.main__pages');
-    /*написать условие, что если есть кнопки, то удалить их */
+    end = document.querySelector('.main__botter');
+    /*Условие: если есть кнопки, то удалить их */
     if (!a) {
-        console.log(items)
         createPageButtons(il, items);
         showPage(0, items, poloski)
 
@@ -209,7 +217,7 @@ function fillSongs(arr) {
     }
     else {
         a.remove()
-        console.log(items)
+        end.remove()
         createPageButtons(il, items);
         showPage(0, items, poloski)
 
@@ -313,6 +321,7 @@ Search.addEventListener('keydown', function (event) {
         Easy.style.backgroundColor = "rgba(114, 255, 91, 0.5)";
         Mid.style.backgroundColor = "rgba(255, 219, 91, 0.5)";
         Hard.style.backgroundColor = "rgba(255, 130, 130, 0.5)";
+        updateActiveButtonStates();
     }
     removeElements()
 })
@@ -361,9 +370,8 @@ function showPage(page, items, poloski) {
         item.classList.toggle('hidden', index < startIndex || index >= endIndex);
     });
     poloski.forEach((item, index) => {
+        /*Входит ли эелмент в необходимый диапазон*/
         if (index + 1 === endIndex) {
-
-            console.log(item, index + 1, endIndex)
             item.classList.add('hidden');
         }
         item.classList.toggle('hidden', index < startIndex || index >= endIndex);
@@ -379,8 +387,8 @@ function createPageButtons(il, items) {
     /*Добавление кнопок пагинации*/
     for (let i = 0; i < totalPages; i++) {
         const pageButton = document.createElement('a');
+        /*Текст кнопок*/
         pageButton.textContent = i + 1;
-        pageButton.innerHTML = i + 1;
         pageButton.addEventListener('click', () => {
             currentPage = i;
             showPage(currentPage, items, poloski);
@@ -397,9 +405,10 @@ function updateActiveButtonStates() {
     pageButtons.forEach((button, index) => {
         if (index === currentPage) {
             button.classList.add('main__pages-active');
+            button.classList.remove('main__pages-passive');
         } else {
             button.classList.remove('main__pages-active');
+            button.classList.add('main__pages-passive');
         }
-    });
+    })
 }
-

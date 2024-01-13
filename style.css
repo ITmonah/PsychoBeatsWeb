@@ -634,7 +634,6 @@ ol {
 }
 
 .main__songs-list h1 {
-    /*color: rgba(255, 219, 91, 1);*/
     font-family: Montserrat;
     font-size: 32px;
     font-style: normal;
@@ -682,8 +681,9 @@ ol {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     width: 132px;
+    gap: 21px;
 }
 
 .main__pages a {
@@ -699,8 +699,12 @@ ol {
     cursor: pointer;
 }
 
-#main__pages-active {
-    color: rgba(255, 255, 255, 1);
+.main__pages-active {
+    color: rgba(255, 255, 255, 1) !important;
+}
+
+.main__pages-passive {
+    color: rgba(255, 255, 255, 0.5);
 }
 
 /*Стиль для листа поиска*/
