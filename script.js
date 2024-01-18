@@ -405,6 +405,7 @@ function createPageButtons(il, items) {
     for (let i = 0; i < totalPages; i++) {
         if (totalPages > 1) {
             const pageButton = document.createElement('a');
+            pageButton.setAttribute('href', '#');
             /*Текст кнопок*/
             pageButton.textContent = i + 1;
             pageButton.addEventListener('click', () => {
