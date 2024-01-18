@@ -38,6 +38,7 @@ All.onclick = function () {
     Search.value = "";
     removeElements();
     showPage(0, items, poloski);
+    updateButtonStates()
 }
 Easy.onclick = function () {
     this.style.backgroundColor = "rgba(114, 255, 91, 1)";
@@ -47,6 +48,7 @@ Easy.onclick = function () {
     Search.value = "";
     removeElements();
     showPage(0, items, poloski);
+    updateButtonStates()
 }
 Mid.onclick = function () {
     this.style.backgroundColor = "rgba(255, 219, 91, 1)";
@@ -56,6 +58,7 @@ Mid.onclick = function () {
     Search.value = "";
     removeElements();
     showPage(0, items, poloski);
+    updateButtonStates()
 }
 Hard.onclick = function () {
     this.style.backgroundColor = "rgba(255, 130, 130, 1)";
@@ -65,11 +68,13 @@ Hard.onclick = function () {
     Search.value = "";
     removeElements();
     showPage(0, items, poloski);
+    updateButtonStates()
 }
 Remove_button.onclick = function () {
     Search.value = "";
     removeElements();
     Search_button.click();
+    updateButtonStates()
 }
 Search_button.addEventListener("click", songSearch(Search.value, Search_button));
 
@@ -225,7 +230,18 @@ function fillSongs(arr) {
         End.classList.add("main__botter");
         Main.appendChild(End);
     }
-
+    if (items.length === 0) {
+        let nothing = document.createElement("div");
+        nothing.classList.add("nothing");
+        nothing.innerHTML =
+            `<div class="nothing__img">
+                <img src="img/dribble-01.png" alt="Ничего">
+            </div>
+            <p>По вашему запросу ничего не найдено!</p>`
+        songsMassive.appendChild(nothing);
+        console.log("Ничего не найдено")
+    }
+    updateButtonStates()
 }
 function songFilter(difficult) {
     let diff = difficult;
@@ -324,6 +340,7 @@ Search.addEventListener('keydown', function (event) {
         updateActiveButtonStates();
     }
     removeElements()
+    updateButtonStates()
 })
 function removeElements() {
     /*Очистить все элементы*/
@@ -386,16 +403,19 @@ function createPageButtons(il, items) {
     paginationContainer.classList.add('main__pages');
     /*Добавление кнопок пагинации*/
     for (let i = 0; i < totalPages; i++) {
-        const pageButton = document.createElement('a');
-        /*Текст кнопок*/
-        pageButton.textContent = i + 1;
-        pageButton.addEventListener('click', () => {
-            currentPage = i;
-            showPage(currentPage, items, poloski);
-            updateActiveButtonStates();
-        });
-        content.appendChild(paginationContainer);
-        paginationDiv.appendChild(pageButton);
+        if (totalPages > 1) {
+            const pageButton = document.createElement('a');
+            /*Текст кнопок*/
+            pageButton.textContent = i + 1;
+            pageButton.addEventListener('click', () => {
+                currentPage = i;
+                showPage(currentPage, items, poloski);
+                /*updateActiveButtonStates();*/
+            });
+            content.appendChild(paginationContainer);
+            paginationDiv.appendChild(pageButton);
+        }
+
     }
 }
 
@@ -404,6 +424,20 @@ function updateActiveButtonStates() {
     const pageButtons = document.querySelectorAll('.main__pages a');
     pageButtons.forEach((button, index) => {
         if (index === currentPage) {
+            button.classList.add('main__pages-active');
+            button.classList.remove('main__pages-passive');
+        } else {
+            button.classList.remove('main__pages-active');
+            button.classList.add('main__pages-passive');
+        }
+    })
+}
+
+function updateButtonStates() {
+    /*Добавление класса для активной первой страницы*/
+    const pageButtons = document.querySelectorAll('.main__pages a');
+    pageButtons.forEach((button, index) => {
+        if (index === 0) {
             button.classList.add('main__pages-active');
             button.classList.remove('main__pages-passive');
         } else {

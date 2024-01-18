@@ -633,12 +633,13 @@ ol {
 .main__songs {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    max-width: 100%;
+    align-items: end;
+    justify-content: end;
     margin-top: 20px;
-    padding-left: 122px;
     gap: 18px;
+
     min-height: 100%;
+    width: 100%;
 }
 
 .main__songs-img {
@@ -657,7 +658,7 @@ ol {
     display: flex;
     flex-direction: row;
     gap: 23px;
-    width: 790px;
+    width: 787px;
 }
 
 .main__songs-list {
@@ -773,4 +774,27 @@ ol {
 
 .hidden {
     display: none;
+}
+
+/*Ничего не найдено*/
+.nothing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+}
+
+.nothing__img {
+    max-width: 400px;
+}
+
+.nothing__img img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.nothing p {
+    font-size: 22px;
+    color: #FFF
 }
