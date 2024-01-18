@@ -94,6 +94,12 @@ body {
     gap: 24px;
 }
 
+html,
+body,
+#main {
+    min-height: 100vh
+}
+
 .main__gameplay {
     width: 100%;
     height: 510px;
@@ -490,6 +496,11 @@ ol {
     line-height: normal;
 }
 
+.we__a-phone {
+    color: #FFF;
+    text-decoration-line: none;
+}
+
 /*Библиотека*/
 .main__search {
     display: flex;
@@ -606,10 +617,16 @@ ol {
     background: #FFF;
 }
 
+.main__songs-spacers {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    width: 100%;
+}
+
 .Songs__spacer {
     width: 524px;
     height: 1px;
-    margin-left: 259px;
     background: #3D3D3D;
 }
 
